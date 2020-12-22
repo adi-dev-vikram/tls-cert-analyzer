@@ -1,7 +1,8 @@
-import ssl, socket
-from OpenSSL import crypto # pip install pyopenssl
+#!/usr/bin/env python3
 
+import ssl, socket
 import sys
+import os
 
 
 
@@ -16,24 +17,28 @@ with ctx.wrap_socket(socket.socket(), server_hostname=hostname) as s:
         print("Cert error")
 
 print(cert)
-cert_array = crypto.load_certificate(crypto.FILETYPE_PEM, cert)
+
 subject = dict(x[0] for x in cert['subject'])
 issued_to = subject['commonName']
 subject_altname = cert['subjectAltName']
 
 
 name = sys.argv[1]
-if cert.has_key("subjectAltName"):
-        for typ, val in cert["subjectAltName"]:
-            if typ == "DNS" and val == name:
-                return True
+name_dns_map={}
+
+print("List of DNS names:")
+if "subjectAltName" in cert.keys():
+  for typ, val in cert["subjectAltName"]:
+    print(typ + ":" + val)
+    name_dns_map[typ]=val
 
 
-print("+++++++++==============")
-print(subject_altname)
+print("Cert is Issued to:")
 
 print(issued_to)
 issuer = dict(x[0] for x in cert['issuer'])
 issued_by = issuer['commonName']
+
+print("Cert is issued by:")
 
 print(issued_by)
