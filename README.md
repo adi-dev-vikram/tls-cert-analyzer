@@ -4,3 +4,5 @@ client side and server side scripts to analyse the tls connection parameters and
 For example: CN Name, Subject Alt Name, cipher suite used in TLS Handshake etc.
 To get cert info from cmdline:
 openssl s_client -showcerts -connect url:443
+
+openssl x509 -in HTTPSRSAServerCertificate.crt -noout -text
