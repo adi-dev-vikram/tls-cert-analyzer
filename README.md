@@ -20,3 +20,4 @@ You can enable SNI in s_client with the -servername switch:
 
 openssl s_client -servername abc.com -connect abc.com:443
 
+Working on adding cpp versions of the same
