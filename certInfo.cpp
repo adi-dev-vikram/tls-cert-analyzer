@@ -95,7 +95,7 @@ int main(void)
 //  if(curl) {
 
 //  /* what call to write: */
-//    curl_easy_setopt(curl, CURLOPT_URL, "https://10.21.11.80/agent/settings");
+//    curl_easy_setopt(curl, CURLOPT_URL, "https://servernameurl");
 //    curl_easy_setopt(curl, CURLOPT_HEADERDATA, headerfile);
 
 //    do { /* dummy loop, just to break out from */
