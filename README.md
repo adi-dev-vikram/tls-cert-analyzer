@@ -5,7 +5,7 @@ For example: CN Name, Subject Alt Name, cipher suite used in TLS Handshake etc.
 
 The script can help in monitoring https configuration and tls cert configurations. And it can inform about incorrect configuration based on cert parameters and required communication modes for example : (IP, FQDN, Hostname fields and SAN field)
 
-About X.509
+About X.509 :
 X.509 is a specification for digital certificates published by the ITU-T. It specifies information and attributes required for the identification of a server or system, and is used for secure management and distribution of digitally signed certificates across secure Internet networks. OpenSSL most commonly uses X.509 certificates.
 
 
