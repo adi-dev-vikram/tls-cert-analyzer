@@ -10,7 +10,7 @@ X.509 is a specification for digital certificates published by the ITU-T. It spe
 
 
 To get cert info from cmdline:
-openssl s_client -showcerts -connect url:443
+openssl s_client -showcerts -connect url:443 (provides cert in .pem)
 
 openssl x509 -in HTTPSRSAServerCertificate.crt -noout -text
 
@@ -20,4 +20,4 @@ You can enable SNI in s_client with the -servername switch:
 
 openssl s_client -servername abc.com -connect abc.com:443
 
-Working on adding cpp versions of the same
+Working on adding cpp version of the same tool which can aggregate cert info and at the same time perform mutual tls Authentication.
